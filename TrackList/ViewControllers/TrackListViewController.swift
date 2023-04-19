@@ -11,14 +11,17 @@ final class TrackListViewController: UITableViewController {
     
     private var trackList = Track.getTrack()
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 100
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let trackDetailVC = segue.destination as? TrackDetailsViewController else { return }
+        guard let trackDetailVC = segue.destination as? TrackDetailsViewController else { return
+        }
         trackDetailVC.track = sender as? Track
     }
 }
