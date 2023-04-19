@@ -20,9 +20,8 @@ final class TrackListViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let trackDetailVC = segue.destination as? TrackDetailsViewController else { return
-        }
-        trackDetailVC.track = sender as? Track
+        let trackDetailVC = segue.destination as? TrackDetailsViewController
+        trackDetailVC?.track = sender as? Track
     }
 }
 
